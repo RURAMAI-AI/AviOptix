@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AviOptix | AI-Powered Poultry Management for African Farmers</title>
-    <meta name="description" content="AviOptix is a smart poultry management app for African farmers. Track, analyze, and optimize your farm with real-time data and AI-powered insights.">
-    <meta name="keywords" content="poultry management, smart farming, African farmers, poultry app, AI farming, livestock management, Cobb500, Ross308, commercial layers">
-    <link rel="icon" type="image/png" sizes="512x512" href="https://ik.imagekit.io/ojfedrprt/logo-512.png?updatedAt=1762953631239">
-    <link rel="icon" type="image/png" sizes="192x192" href="https://ik.imagekit.io/ojfedrprt/logo-192.png?updatedAt=1762953631150">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://ik.imagekit.io/ojfedrprt/logo-180.png?updatedAt=1762953631031">
-    <link rel="icon" type="image/png" sizes="64x64" href="https://ik.imagekit.io/ojfedrprt/logo-64.png?updatedAt=1762953631431">
-    <link rel="icon" type="image/png" sizes="48x48" href="https://ik.imagekit.io/ojfedrprt/logo-48.png?updatedAt=1762953631098">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/ojfedrprt/logo-32.png?updatedAt=1762953631107">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://ik.imagekit.io/ojfedrprt/logo-16.png?updatedAt=1762953631117">
+    <meta name="description"
+        content="AviOptix is a smart poultry management app for African farmers. Track, analyze, and optimize your farm with real-time data and AI-powered insights.">
+    <meta name="keywords"
+        content="poultry management, smart farming, African farmers, poultry app, AI farming, livestock management, Cobb500, Ross308, commercial layers">
+    <link rel="icon" type="image/png" sizes="512x512"
+        href="https://ik.imagekit.io/ojfedrprt/logo-512.png?updatedAt=1762953631239">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://ik.imagekit.io/ojfedrprt/logo-192.png?updatedAt=1762953631150">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://ik.imagekit.io/ojfedrprt/logo-180.png?updatedAt=1762953631031">
+    <link rel="icon" type="image/png" sizes="64x64"
+        href="https://ik.imagekit.io/ojfedrprt/logo-64.png?updatedAt=1762953631431">
+    <link rel="icon" type="image/png" sizes="48x48"
+        href="https://ik.imagekit.io/ojfedrprt/logo-48.png?updatedAt=1762953631098">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://ik.imagekit.io/ojfedrprt/logo-32.png?updatedAt=1762953631107">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://ik.imagekit.io/ojfedrprt/logo-16.png?updatedAt=1762953631117">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,6 +46,17 @@
             --light: #f8fafc;
             --gray: #64748b;
             --transition: all 0.3s ease;
+            --orb-1: rgba(245, 158, 11, 0.4);
+            --orb-2: rgba(16, 185, 129, 0.4);
+            --orb-3: rgba(59, 130, 246, 0.4);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        body.dark-mode {
+            --card-bg: rgba(30, 41, 59, 0.3);
+            --card-border: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -66,28 +87,36 @@
 
         /* Header & Navigation with Glassmorphism */
         header {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 1.5rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid transparent;
+            background: transparent;
+            backdrop-filter: none;
+            box-shadow: none;
         }
 
-        body.dark-mode header {
+        header.scrolled {
+            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        body.dark-mode header.scrolled {
             background: rgba(15, 23, 42, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
         }
 
         .logo {
@@ -96,6 +125,11 @@
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .logo img {
@@ -105,11 +139,23 @@
 
         .nav-links {
             display: flex;
+            gap: 2rem;
             list-style: none;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 0.5rem 2rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            margin: 0;
+        }
+
+        body.dark-mode .nav-links {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 0;
         }
 
         .nav-links a {
@@ -117,6 +163,7 @@
             color: var(--dark);
             font-weight: 500;
             transition: var(--transition);
+            position: relative;
         }
 
         body.dark-mode .nav-links a {
@@ -185,16 +232,65 @@
             background-color: #2563eb;
         }
 
+        /* Gradient Orbs */
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: float-orb 10s infinite ease-in-out alternate;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--orb-1);
+            top: 10%;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--orb-2);
+            bottom: 10%;
+            right: -50px;
+            animation-delay: -2s;
+        }
+
+        .orb-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--orb-3);
+            top: 40%;
+            left: 40%;
+            opacity: 0.3;
+            animation-delay: -5s;
+        }
+
+        @keyframes float-orb {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+        }
+
+        /* Section Styling */
+        section {
+            position: relative;
+            overflow: hidden;
+            /* Keep orbs inside */
+        }
+
         /* Hero Section */
         .hero {
             padding: 10rem 0 5rem;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        body.dark-mode .hero {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
         }
 
         .hero-content {
@@ -204,17 +300,26 @@
             align-items: center;
         }
 
+        .hero-text {
+            max-width: 800px;
+        }
+
         .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            line-height: 1.2;
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        body.dark-mode .hero-text h1 {
+            color: white;
         }
 
         .hero-text p {
             font-size: 1.25rem;
-            color: var(--gray);
             margin-bottom: 2rem;
+            color: var(--gray);
         }
 
         body.dark-mode .hero-text p {
@@ -224,7 +329,6 @@
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
         }
 
         .hero-image {
@@ -236,21 +340,24 @@
 
         .video-container {
             width: 100%;
-            max-width: 615px; /* Calculated width for 346px height with 16:9 aspect ratio */
+            max-width: 615px;
+            /* Calculated width for 346px height with 16:9 aspect ratio */
             border-radius: 12px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             position: relative;
-            padding-bottom: 56.26%; /* 16:9 aspect ratio */
+            padding-bottom: 56.26%;
+            /* 16:9 aspect ratio */
             height: 0;
         }
-        
+
         @media (min-width: 769px) {
             .video-container {
                 height: 346px;
                 padding-bottom: 0;
                 width: auto;
-                max-width: 615px; /* Calculated width for 346px height with 16:9 aspect ratio */
+                max-width: 615px;
+                /* Calculated width for 346px height with 16:9 aspect ratio */
             }
         }
 
@@ -266,7 +373,7 @@
             height: 100%;
             object-fit: cover;
         }
-        
+
         @media (min-width: 769px) {
             .hero-video {
                 position: static;
@@ -310,11 +417,36 @@
         }
 
         .feature-card {
-            background-color: white;
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.1), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .feature-card:hover::after {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
         }
 
         body.dark-mode .feature-card {
@@ -322,13 +454,8 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
         body.dark-mode .feature-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.3);
         }
 
         .feature-icon {
@@ -456,7 +583,8 @@
         /* Stat Card */
         .stat-card {
             background-image: linear-gradient(to right, var(--primary), #ffc107);
-            color: white; /* Ensure text is readable on gradient */
+            color: white;
+            /* Ensure text is readable on gradient */
             border-radius: 12px;
             padding: 3rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -465,7 +593,8 @@
         }
 
         body.dark-mode .stat-card {
-            background-image: linear-gradient(to right, #cc7000, #e6900b); /* Darker gradient for dark mode */
+            background-image: linear-gradient(to right, #cc7000, #e6900b);
+            /* Darker gradient for dark mode */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
@@ -595,18 +724,45 @@
         }
 
         .pricing-card {
-            background-color: white;
-            border-radius: 12px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
             padding: 2.5rem 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--glass-shadow);
             text-align: center;
-            transition: var(--transition);
+            transition: all 0.4s ease;
             position: relative;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .pricing-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.1), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .pricing-card:hover::after {
+            opacity: 1;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
         }
 
         body.dark-mode .pricing-card {
             background-color: #1e293b;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode .pricing-card:hover {
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.3);
         }
 
         .pricing-card.featured {
@@ -652,7 +808,7 @@
         }
 
         .pricing-price {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.5rem;
@@ -679,28 +835,89 @@
         }
 
         .pricing-features li::before {
-            content: '✓';
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             color: var(--secondary);
-            font-weight: 700;
             margin-right: 0.5rem;
         }
 
+        .pricing-features li.unavailable::before {
+            content: '\f00d';
+            color: #ef4444;
+        }
+
+        .pricing-features li.locked::before {
+            content: '\f00d';
+            color: #ef4444;
+        }
+
+        .pricing-features li.locked {
+            color: var(--gray);
+            opacity: 0.8;
+        }
+
+        .pricing-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-region {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-weight: normal;
+            margin-top: 0.25rem;
+        }
+
+        .pricing-section-header {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin: 1.5rem 0 0.5rem;
+            font-weight: 700;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.25rem;
+        }
+
+        body.dark-mode .pricing-section-header {
+            border-color: #334155;
+            color: #94a3b8;
+        }
+
+
+
         /* Consultation Card Specific Styles */
         .consultation-card {
-            background-image: linear-gradient(to right, var(--primary), #ffc107); /* Orange gradient */
+            background-image: linear-gradient(to right, var(--primary), #ffc107);
+            /* Orange gradient */
             color: white;
-            padding: 3rem; /* Adjust padding for better appearance */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+            padding: 3rem;
+            /* Adjust padding for better appearance */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            /* Slightly stronger shadow */
         }
 
         body.dark-mode .consultation-card {
-            background-image: linear-gradient(to right, #cc7000, #e6900b); /* Darker orange gradient for dark mode */
+            background-image: linear-gradient(to right, #cc7000, #e6900b);
+            /* Darker orange gradient for dark mode */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
         .consultation-card .pricing-name,
         .consultation-card .pricing-period {
-            color: white; /* Ensure all text inside is white */
+            color: white;
+            /* Ensure all text inside is white */
         }
 
         .consultation-card .btn-primary {
@@ -709,7 +926,8 @@
         }
 
         .consultation-card .btn-primary:hover {
-            background-color: #f0f0f0; /* Slightly darker white on hover */
+            background-color: #f0f0f0;
+            /* Slightly darker white on hover */
             color: var(--primary);
         }
 
@@ -870,24 +1088,24 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
-            
+
             .hero-buttons {
                 justify-content: center;
             }
-            
+
             .steps {
                 flex-direction: column;
                 gap: 2rem;
             }
-            
+
             .steps::before {
                 display: none;
             }
-            
+
             .pricing-card.featured {
                 transform: none;
             }
-            
+
             .pricing-card.featured:hover {
                 transform: translateY(-5px);
             }
@@ -897,23 +1115,23 @@
             .nav-links {
                 display: none;
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .hero-text h1 {
                 font-size: 2.5rem;
             }
-            
+
             .hero-text p {
                 font-size: 1.125rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .video-container {
                 max-width: 100%;
             }
@@ -924,25 +1142,23 @@
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .hero-buttons .btn {
                 width: 100%;
                 max-width: 250px;
                 text-align: center;
             }
-            
+
             .nav-actions {
                 display: none;
             }
-            
+
             .footer-bottom {
                 flex-direction: column;
                 text-align: center;
             }
-            
-            .video-container {
-                
-            }
+
+            .video-container {}
         }
 
         /* Mobile Menu */
@@ -1055,7 +1271,7 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         .modal-content {
@@ -1112,13 +1328,15 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <nav>
                 <div class="logo">
-                    <img src="https://ik.imagekit.io/ojfedrprt/AviOptix-Orange-Logo2.png?updatedAt=1761942486634" alt="AviOptix Logo">
+                    <img src="https://ik.imagekit.io/ojfedrprt/AviOptix-Orange-Logo2.png?updatedAt=1761942486634"
+                        alt="AviOptix Logo">
                     <span>AviOptix</span>
                 </div>
                 <ul class="nav-links">
@@ -1141,7 +1359,8 @@
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
             <div class="logo">
-                <img src="https://ik.imagekit.io/ojfedrprt/AviOptix-Orange-Logo2.png?updatedAt=1761942486634" alt="AviOptix Logo">
+                <img src="https://ik.imagekit.io/ojfedrprt/AviOptix-Orange-Logo2.png?updatedAt=1761942486634"
+                    alt="AviOptix Logo">
                 <span>AviOptix</span>
             </div>
             <button class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
@@ -1159,11 +1378,13 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2" style="right: 10%; top: 20%;"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Smart Poultry Management for African Farmers</h1>
+                    <h1>Smart Poultry Management for Farmers</h1>
                     <p>Track, analyze, and optimize your poultry farm with real-time data and AI-powered insights</p>
                     <div class="hero-buttons">
                         <a href="#" class="btn btn-primary" id="heroGetStartedBtn">Get Started</a>
@@ -1172,7 +1393,9 @@
                 <div class="hero-image">
                     <div class="video-container">
                         <video class="hero-video" autoplay muted loop playsinline>
-                            <source src="https://ik.imagekit.io/ojfedrprt/AviOptix-Hero-Video.mp4?updatedAt=1762022153129" type="video/mp4">
+                            <source
+                                src="https://ik.imagekit.io/ojfedrprt/AviOptix-Hero-Video.mp4?updatedAt=1762022153129"
+                                type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -1183,6 +1406,9 @@
 
     <!-- Features Section -->
     <section class="section" id="features">
+        <div class="gradient-orb orb-3"></div>
+        <div class="gradient-orb orb-1" style="right: 5%; top: 40%;"></div>
+        <div class="gradient-orb orb-2" style="left: 10%; bottom: 10%;"></div>
         <div class="container">
             <div class="section-title">
                 <h2>Powerful Features for Modern Farmers</h2>
@@ -1236,7 +1462,8 @@
     </section>
 
     <!-- How It Works -->
-    <section class="section how-it-works" id="how-it-works">
+    <section class="section bg-light" id="how-it-works">
+        <div class="gradient-orb orb-1" style="left: 5%; top: 30%;"></div>
         <div class="container">
             <div class="section-title">
                 <h2>How AviOptix Works</h2>
@@ -1271,7 +1498,211 @@
     <section class="section">
         <div class="container">
             <div class="stat-card">
-                <p>Trusted by commercial farmers, AviOptix has been rigorously field-tested and proven effective in managing flocks from 20,000 to over 500,000 birds.</p>
+                <p>Trusted by commercial farmers, AviOptix has been rigorously field-tested and proven effective in
+                    managing flocks from 20,000 to over 500,000 birds.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" id="pricing">
+        <div class="gradient-orb orb-2" style="right: -5%; bottom: 10%;"></div>
+        <div class="gradient-orb orb-1" style="left: -5%; top: 20%;"></div>
+        <div class="gradient-orb orb-3" style="right: 20%; top: 50%;"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose Your Plan</h2>
+                <p>Flexible pricing for farms of all sizes</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Free Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon"><i class="fas fa-gift"></i></div>
+                        <h3 class="pricing-name">Free Tier</h3>
+                        <div class="pricing-price">$0<span class="pricing-period">/month</span></div>
+                        <p class="pricing-desc">Best for: Small backyard farmers, hobby keepers, testing the app</p>
+                    </div>
+
+                    <div class="pricing-section-header">Capacity Limits</div>
+                    <ul class="pricing-features">
+                        <li>Max Birds: 500</li>
+                        <li>Max Houses: 1</li>
+                        <li>Data Storage: 30 days</li>
+                    </ul>
+
+                    <div class="pricing-section-header">What You Get</div>
+                    <ul class="pricing-features">
+                        <li>Basic daily tracking</li>
+                        <li>Manual data entry</li>
+                        <li>Simple dashboard</li>
+                        <li>Current flock statistics</li>
+                        <li>Mobile & web app access</li>
+                        <li>Dark mode</li>
+                    </ul>
+
+                    <div class="pricing-section-header">What's Locked</div>
+                    <ul class="pricing-features">
+                        <li class="locked">No alerts or notifications</li>
+                        <li class="locked">No analytics or insights</li>
+                        <li class="locked">No data export</li>
+                        <li class="locked">No temperature monitoring</li>
+                        <li class="locked">No advanced feed management</li>
+                        <li class="locked">No weight tracking</li>
+                        <li class="locked">No IoT sensors</li>
+                        <li class="locked">No multiple houses</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Get Started</a>
+                </div>
+
+                <!-- Basic Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="pricing-name">Basic Tier</h3>
+                        <div class="pricing-price">$19<span class="pricing-period">/month</span>
+                            <span class="pricing-region">Africa/Asia Pricing</span>
+                        </div>
+                        <p class="pricing-desc">Best for: Single-house operations wanting more capacity</p>
+                    </div>
+
+                    <div class="pricing-section-header">Capacity Limits</div>
+                    <ul class="pricing-features">
+                        <li>Max Birds: 2,000</li>
+                        <li>Max Houses: 1</li>
+                        <li>Max Users: 1</li>
+                        <li>Data Storage: 6 months</li>
+                    </ul>
+
+                    <div class="pricing-section-header">What You Get</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Free PLUS:</li>
+                        <li>Basic tracking features</li>
+                        <li>Mobile app access</li>
+                        <li>Email support</li>
+                    </ul>
+
+                    <div class="pricing-section-header">What's Locked</div>
+                    <ul class="pricing-features">
+                        <li class="locked">NO web access</li>
+                        <li class="locked">NO IoT sensors</li>
+                        <li class="locked">NO data export</li>
+                        <li class="locked">NO API access</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Start Free Trial</a>
+                </div>
+
+                <!-- Starter Tier -->
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <div class="pricing-icon"><i class="fas fa-seedling"></i></div>
+                        <h3 class="pricing-name">Starter Tier</h3>
+                        <div class="pricing-price">$79<span class="pricing-period">/month</span>
+                            <span class="pricing-region">Africa/Asia Pricing</span>
+                        </div>
+                        <p class="pricing-desc">Best for: Small to medium commercial farms (up to 20K birds)</p>
+                    </div>
+
+                    <div class="pricing-section-header">Capacity Limits</div>
+                    <ul class="pricing-features">
+                        <li>Max Birds: 20,000</li>
+                        <li>Max Houses: 5</li>
+                        <li>Max Users: 3</li>
+                        <li>Data Storage: 24 months</li>
+                    </ul>
+
+                    <div class="pricing-section-header">What You Get</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Basic PLUS:</li>
+                        <li>Web app access (desktop)</li>
+                        <li>Smart alerts & notifications</li>
+                        <li>Analytics & insights dashboard</li>
+                        <li>Data export (CSV/PDF)</li>
+                        <li>Temperature monitoring</li>
+                        <li>Advanced feed management</li>
+                        <li>Weight tracking</li>
+                        <li>Team collaboration (3 users)</li>
+                        <li>Environmental monitoring</li>
+                        <li>Performance trends & graphs</li>
+                        <li>Cost analysis & profitability</li>
+                    </ul>
+
+                    <div class="pricing-section-header">What's Locked</div>
+                    <ul class="pricing-features">
+                        <li class="locked">NO IoT sensors</li>
+                        <li class="locked">NO API access</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                </div>
+
+                <!-- Professional Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="pricing-name">Professional Tier</h3>
+                        <div class="pricing-price">$299<span class="pricing-period">/month</span>
+                            <span class="pricing-region">Global Pricing</span>
+                        </div>
+                        <p class="pricing-desc">Best for: Medium to large commercial operations with IoT</p>
+                    </div>
+
+                    <div class="pricing-section-header">Capacity Limits</div>
+                    <ul class="pricing-features">
+                        <li>Max Birds: 150,000</li>
+                        <li>Max Houses: 20</li>
+                        <li>Max Users: 10</li>
+                        <li>Data Storage: 60 months</li>
+                    </ul>
+
+                    <div class="pricing-section-header">What You Get</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Starter PLUS:</li>
+                        <li>IoT Integration (LoRa)</li>
+                        <li>Automated sensor data</li>
+                        <li>Up to 50 sensors</li>
+                        <li>Up to 10 cameras</li>
+                        <li>API access</li>
+                        <li>Advanced reports & forecasting</li>
+                        <li>Predictive analytics</li>
+                        <li>Machine learning insights</li>
+                        <li>Priority email support</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Start Free Trial</a>
+                </div>
+
+                <!-- Enterprise Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-icon"><i class="fas fa-building"></i></div>
+                        <h3 class="pricing-name">Enterprise Tier</h3>
+                        <div class="pricing-price">$999<span class="pricing-period">/month</span>
+                            <span class="pricing-region">Global Pricing</span>
+                        </div>
+                        <p class="pricing-desc">Best for: Large commercial operations & multi-farm businesses</p>
+                    </div>
+
+                    <div class="pricing-section-header">Capacity Limits</div>
+                    <ul class="pricing-features">
+                        <li>Max Birds: UNLIMITED</li>
+                        <li>Max Houses: UNLIMITED</li>
+                        <li>Max Users: UNLIMITED</li>
+                        <li>Data Storage: UNLIMITED</li>
+                    </ul>
+
+                    <div class="pricing-section-header">What You Get</div>
+                    <ul class="pricing-features">
+                        <li>Everything in Professional PLUS:</li>
+                        <li>Dedicated support (24/7 priority)</li>
+                        <li>Direct phone/email support</li>
+                        <li>Video call support sessions</li>
+                        <li>Multi-farm management</li>
+                        <li>Role-based access control</li>
+                        <li>Custom integrations</li>
+                        <li>SLA guarantees</li>
+                        <li>Dedicated poultry consultant</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Contact Sales</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1286,7 +1717,8 @@
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>AviOptix helped me reduce my mortality rate by 15% in just 3 months. The insights on feed optimization were game-changing.</p>
+                        <p>AviOptix helped me reduce my mortality rate by 15% in just 3 months. The insights on feed
+                            optimization were game-changing.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">JK</div>
@@ -1298,7 +1730,8 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>As a layer farmer, tracking egg production and feed conversion has never been easier. My profits have increased by 22% since using AviOptix.</p>
+                        <p>As a layer farmer, tracking egg production and feed conversion has never been easier. My
+                            profits have increased by 22% since using AviOptix.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">AM</div>
@@ -1310,7 +1743,8 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>The offline functionality is perfect for my rural farm. I can record data anytime and it syncs when I have internet. Highly recommended!</p>
+                        <p>The offline functionality is perfect for my rural farm. I can record data anytime and it
+                            syncs when I have internet. Highly recommended!</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">TM</div>
@@ -1324,20 +1758,7 @@
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="section" id="pricing">
-        <div class="container">
-            <div class="pricing-grid">
-                <div class="pricing-card consultation-card" style="transform: none; border: none; text-align: center;">
-                    <div class="pricing-header">
-                        <h3 class="pricing-name">Book a Consultation</h3>
-                        <p class="pricing-period">Tell us what you need and we will craft a tailored solution for your needs.</p>
-                    </div>
-                    <a href="#" class="btn btn-primary" id="bookConsultationBtn">Book Consultation</a>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- FAQ -->
     <section class="section faq" id="faq">
@@ -1353,7 +1774,9 @@
                         <span><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>AviOptix stores all your data locally on your device when you're offline. Once you reconnect to the internet, it automatically syncs with the cloud, ensuring you never lose any important information.</p>
+                        <p>AviOptix stores all your data locally on your device when you're offline. Once you reconnect
+                            to the internet, it automatically syncs with the cloud, ensuring you never lose any
+                            important information.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1362,7 +1785,8 @@
                         <span><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>We support all major broiler breeds (Cobb500, Ross308) and commercial layers. You can also set custom standards for other breeds you might be raising.</p>
+                        <p>We support all major broiler breeds (Cobb500, Ross308) and commercial layers. You can also
+                            set custom standards for other breeds you might be raising.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1371,7 +1795,8 @@
                         <span><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! With a Pro or Enterprise account, you can access your farm data from multiple devices. All changes sync automatically across your devices.</p>
+                        <p>Yes! With a Pro or Enterprise account, you can access your farm data from multiple devices.
+                            All changes sync automatically across your devices.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1380,7 +1805,8 @@
                         <span><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely. We use industry-standard encryption to protect your data. We never share your farm information with third parties without your explicit consent.</p>
+                        <p>Absolutely. We use industry-standard encryption to protect your data. We never share your
+                            farm information with third parties without your explicit consent.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1389,7 +1815,8 @@
                         <span><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>We support multiple African currencies including TZS, KES, UGX, NGN, GHS, and ZAR. You can easily switch between currencies in the app settings.</p>
+                        <p>We support multiple African currencies including TZS, KES, UGX, NGN, GHS, and ZAR. You can
+                            easily switch between currencies in the app settings.</p>
                     </div>
                 </div>
             </div>
@@ -1402,7 +1829,8 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>AviOptix</h3>
-                    <p>Smart poultry management for African farmers. Track, analyze, and optimize your farm with real-time data and AI-powered insights.</p>
+                    <p>Smart poultry management for African farmers. Track, analyze, and optimize your farm with
+                        real-time data and AI-powered insights.</p>
                 </div>
                 <div class="footer-column">
                     <h3>Product</h3>
@@ -1478,6 +1906,28 @@
     </div>
 
     <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Card Mouse Glow Effect
+        document.querySelectorAll('.feature-card, .pricing-card, .step, .stat-card').forEach(card => {
+            card.onmousemove = e => {
+                const rect = card.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            }
+        });
+
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         const mobileThemeToggle = document.getElementById('mobileThemeToggle');
@@ -1523,7 +1973,7 @@
 
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
-            
+
             question.addEventListener('click', () => {
                 // Close all other items
                 faqItems.forEach(otherItem => {
@@ -1531,7 +1981,7 @@
                         otherItem.classList.remove('active');
                     }
                 });
-                
+
                 // Toggle current item
                 item.classList.toggle('active');
             });
@@ -1579,17 +2029,17 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
+
                     // Close mobile menu if open
                     mobileMenu.classList.remove('active');
                     overlay.classList.remove('active');
@@ -1598,4 +2048,5 @@
         });
     </script>
 </body>
+
 </html>
