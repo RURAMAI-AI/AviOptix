@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About AviOptix - Advanced AI-Driven Poultry Consultancy</title>
+    <meta name="description"
+        content="Independent AI-enhanced poultry supply chain specialists providing cutting-edge consultancy, training, and real-time monetization solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reusing styles from index.html for consistency */
+        :root {
+            --primary: #F59E0B;
+            --primary-dark: #D97706;
+            --secondary: #10B981;
+            --accent: #3B82F6;
+            --dark: #111827;
+            --light: #F9FAFB;
+            --gray: #6B7280;
+            --white: #FFFFFF;
+            --orb-1: rgba(245, 158, 11, 0.4);
+            --orb-2: rgba(16, 185, 129, 0.4);
+            --orb-3: rgba(59, 130, 246, 0.4);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        body.dark-mode {
+            --primary: #FBBF24;
+            --primary-dark: #F59E0B;
+            --secondary: #34D399;
+            --accent: #60A5FA;
+            --dark: #F9FAFB;
+            --light: #111827;
+            --gray: #9CA3AF;
+            --white: #1F2937;
+            --card-bg: rgba(30, 41, 59, 0.3);
+            --card-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden;
+        }
+
+        /* Header & Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+
+        body.dark-mode header.scrolled {
+            background: rgba(17, 24, 39, 0.8);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            border: 1px solid var(--card-border);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Hero Section for About Page */
+        .page-hero {
+            padding: 12rem 0 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .page-hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .content-block {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .content-block h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .content-block p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .content-block ul {
+            list-style-position: inside;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .content-block li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--white);
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        body.dark-mode footer {
+            background-color: #1f2937;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            display: block;
+            text-decoration: none;
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--gray);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Orbs */
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: float-orb 10s infinite ease-in-out alternate;
+        }
+
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--orb-1);
+            top: 10%;
+            left: -5%;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--orb-2);
+            bottom: 20%;
+            right: -10%;
+        }
+
+        .orb-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--orb-3);
+            top: 40%;
+            right: 15%;
+        }
+
+        @keyframes float-orb {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--dark);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="https://ik.imagekit.io/ojfedrprt/AviOptix-Orange-Logo2.png?updatedAt=1761942486634"
+                        alt="AviOptix Logo" style="height: 40px;">
+                    <span>AviOptix</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html#features" class="nav-link">Features</a></li>
+                    <li><a href="index.html#how-it-works" class="nav-link">How it Works</a></li>
+                    <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                </ul>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <button id="themeToggle" class="theme-toggle">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="gradient-orb orb-1"></div>
+        <div class="container">
+            <h1>About AviOptix</h1>
+            <p>Advanced AI-Driven Poultry Consultancy and Optimization Experts</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="gradient-orb orb-3"></div>
+        <div class="container">
+
+            <!-- Introduction -->
+            <div class="content-block">
+                <h3>Who We Are</h3>
+                <p>Avioptix is a pioneering poultry consultancy firm founded by Adam Lurie, a seasoned expert with over
+                    25 years of hands-on experience in the poultry sector spanning from Africa to Europe. Adam’s
+                    extensive background as a consultant has equipped him with deep insights into diverse poultry
+                    operations, from small-scale farms in sub-Saharan Africa to large integrated enterprises in Western
+                    Europe.</p>
+                <p>Co-founded by Kudzayi Matinyarare, who studied medicine in Russia and transitioned into a full-stack
+                    developer, this partnership combines Adam’s industry expertise with Kudzayi’s technical prowess in
+                    AI and software development, helping us create and scale this innovative business. Drawing on this
+                    combined wealth of knowledge, Avioptix was established to revolutionize the industry by integrating
+                    artificial intelligence (AI) with traditional poultry expertise.</p>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="content-block">
+                <h3>Our Mission</h3>
+                <p>Independent AI-enhanced poultry supply chain specialists providing cutting-edge consultancy,
+                    training, and real-time monetization solutions to the global poultry industry.</p>
+                <p>Our unique services deliver comprehensive, independent consultancy and training support tailored to
+                    the integrated poultry production and manufacturing sectors worldwide. Avioptix incorporates
+                    real-time AI data collection and analysis to improve outcomes through customized solutions that
+                    detail primary actions, monitor success via hourly AI-driven metrics, and provide ongoing
+                    training—whether for Greenfield projects or mature businesses.</p>
+                <p>We foster strong, long-term client relationships, adapting solutions as your operations evolve, while
+                    delivering Capital Investment Projects, Business Improvements, and Transformation Programmes
+                    enhanced by predictive AI insights.</p>
+            </div>
+
+            <!-- Real-Time Monetization -->
+            <div class="content-block">
+                <h3>Real-Time Monetization</h3>
+                <p>At the core of Avioptix is our commitment to real-time poultry monetization 24/7. Using advanced AI
+                    systems, we collect data every hour from farm sensors, genetic tracking tools, and performance
+                    monitors. This data aligns directly with genetic performance objectives, such as optimizing broiler
+                    growth rates, egg production efficiency, and breed-specific health metrics (e.g., feed conversion
+                    ratios and mortality rates).</p>
+                <p>By analyzing this continuous stream of information, we enable clients to monetize their operations
+                    more effectively—identifying cost-saving opportunities, predicting market trends, and maximizing
+                    yields in real time.</p>
+            </div>
+
+            <!-- For Entrepreneurs -->
+            <div class="content-block">
+                <h3>For Aspiring Entrepreneurs</h3>
+                <p>For aspiring entrepreneurs entering the poultry industry, Avioptix offers detailed business proposals
+                    complete with 5-year cash flow projections. These projections are built on robust data models,
+                    incorporating variables like initial capital outlay for facilities (e.g., housing, equipment, and
+                    biosecurity systems), ongoing operational costs (feed, labor, veterinary care), revenue streams from
+                    meat or egg sales, and AI-forecasted adjustments for genetic improvements and market fluctuations.
+                </p>
+                <p>Our projections assume conservative growth rates (e.g., 5-10% annual yield increase through
+                    AI-optimized genetics) and factor in risks like disease outbreaks or feed price volatility, ensuring
+                    realistic and actionable plans.</p>
+            </div>
+
+            <!-- Services -->
+            <div class="content-block">
+                <h3>Our Services</h3>
+                <p>Avioptix provides expert production, management, and business development services, augmented by AI
+                    technologies for unparalleled precision and efficiency.</p>
+
+                <h4>Consultancy</h4>
+                <p>Leveraging a global network of highly experienced poultry industry specialists, we offer consultancy
+                    grounded in technical, people management, and operational expertise. What sets Avioptix apart is our
+                    AI integration:</p>
+                <ul>
+                    <li><strong>Real-Time Data Collection and Monetization:</strong> Our proprietary AI platform
+                        collects data 24/7, every hour, from IoT devices monitoring environmental conditions
+                        (temperature, humidity, ventilation), animal behavior, and genetic performance indicators. This
+                        aligns with objectives such as achieving optimal FCR (Feed Conversion Ratio) of 1.5-1.7 for
+                        broilers or hen-day egg production rates exceeding 90%, based on breeds like Ross or Cobb.
+                        Clients receive instant insights to monetize operations, such as adjusting feed formulations to
+                        reduce costs by up to 15% or predicting flock performance to secure premium pricing.</li>
+                    <li><strong>Genetic Performance Optimization:</strong> We consult on breed selection and genetic
+                        enhancements, using AI to simulate outcomes and align with industry standards. For instance, we
+                        help integrate data from genetic suppliers to forecast improvements in traits like disease
+                        resistance or growth speed, ensuring compliance with global benchmarks.</li>
+                </ul>
+                <p>Avioptix, under Adam Lurie’s leadership and with Kudzayi Matinyarare’s technical foundation, bridges
+                    traditional poultry consultancy with futuristic AI, empowering businesses to thrive in a competitive
+                    industry. Contact us to transform your poultry operations today.</p>
+            </div>
+
+        </div>
+        <div class="gradient-orb orb-2"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="https://ik.imagekit.io/ojfedrprt/AviOptix-Orange-Logo2.png?updatedAt=1761942486634"
+                            alt="AviOptix Logo" style="height: 40px;"> AviOptix
+                    </a>
+                    <p style="color: var(--gray);">Empowering poultry farmers with AI-driven insights for a sustainable
+                        future.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 AviOptix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header Scroll Effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+
+</html>
