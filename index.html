@@ -293,19 +293,29 @@
             padding: 10rem 0 5rem;
         }
 
+        .hero-img {
+            width: 100%;
+            max-width: 960px; /* Increased size by 20% from 800px */
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: auto;
+            display: block;
+        }
+
         .hero-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 2fr 3fr; /* 40% text, 60% image */
             gap: 3rem;
             align-items: center;
         }
 
         .hero-text {
             max-width: 800px;
+            /* margin: 0 auto; removed */
         }
 
         .hero-text h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem; /* Shrunk from 3.5rem */
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.2;
@@ -317,7 +327,7 @@
         }
 
         .hero-text p {
-            font-size: 1.25rem;
+            font-size: 1.1rem; /* Shrunk from 1.25rem */
             margin-bottom: 2rem;
             color: var(--gray);
         }
@@ -427,6 +437,14 @@
             box-shadow: var(--glass-shadow);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-card > * {
+            position: relative;
+            z-index: 2;
         }
 
         .feature-card::after {
@@ -437,6 +455,7 @@
             opacity: 0;
             transition: opacity 0.5s;
             pointer-events: none;
+            z-index: 1;
         }
 
         .feature-card:hover::after {
@@ -507,6 +526,10 @@
 
         .feature-card p {
             color: var(--gray);
+            min-height: 4.8rem; /* Ensure consistent height for descriptions */
+            display: flex; /* Use flex to vertically center if content is short */
+            align-items: flex-start; /* Align text to the top */
+            justify-content: center; /* Center text horizontally */
         }
 
         body.dark-mode .feature-card p {
@@ -773,7 +796,7 @@
         .pricing-card.featured::before {
             content: 'Most Popular';
             position: absolute;
-            top: -12px;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
             background-color: var(--primary);
@@ -782,6 +805,15 @@
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
+            z-index: 10;
+        }
+
+        .feature-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         .pricing-card:hover {
@@ -1398,15 +1430,9 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="video-container">
-                        <video class="hero-video" autoplay muted loop playsinline>
-                            <source
-                                src="https://ik.imagekit.io/ojfedrprt/AviOptix-Hero-Video.mp4?updatedAt=1762022153129"
-                                type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                    <img src="https://ik.imagekit.io/ojfedrprt/hero-bg3_imgupscaler.ai_Beta_2K.jpg" alt="Hero Image" class="hero-img">
                 </div>
+
             </div>
         </div>
     </section>
@@ -1428,6 +1454,7 @@
                     </div>
                     <h3>Real-Time Monitoring</h3>
                     <p>Track mortality, feed, water, eggs, and expenses daily with intuitive dashboards.</p>
+                    <img src="https://ik.imagekit.io/ojfedrprt/home.png" alt="Real-Time Monitoring">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon icon-analytics">
@@ -1435,6 +1462,7 @@
                     </div>
                     <h3>Performance Analytics</h3>
                     <p>Compare your flock against breed standards (Cobb500, Ross308, Commercial Layers).</p>
+                    <img src="https://ik.imagekit.io/ojfedrprt/cobbs.png" alt="Performance Analytics">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon icon-insights">
@@ -1442,6 +1470,7 @@
                     </div>
                     <h3>Smart Insights</h3>
                     <p>AI-powered recommendations for feed, water, and health management.</p>
+                    <img src="https://ik.imagekit.io/ojfedrprt/alerts%20(1).png" alt="Smart Insights">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon icon-multi">
@@ -1449,6 +1478,7 @@
                     </div>
                     <h3>Multi-House Management</h3>
                     <p>Manage multiple poultry houses from one centralized dashboard.</p>
+                    <img src="https://ik.imagekit.io/ojfedrprt/manage-houses.png" alt="Multi-House Management">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon icon-offline">
@@ -1456,6 +1486,7 @@
                     </div>
                     <h3>Offline-First</h3>
                     <p>Works without internet, automatically syncs when connected.</p>
+                    <img src="https://ik.imagekit.io/ojfedrprt/alerts.png" alt="Offline-First">
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon icon-financial">
@@ -1463,7 +1494,24 @@
                     </div>
                     <h3>Financial Tracking</h3>
                     <p>Monitor expenses, revenue, and profitability with detailed reports.</p>
+                    <img src="https://ik.imagekit.io/ojfedrprt/money.png" alt="Financial Tracking">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Language Support -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Breaking Language Barriers</h2>
+                <p>Empowering farmers across Africa with inclusive technology</p>
+            </div>
+            <div style="text-align: center;">
+                <p style="max-width: 800px; margin: 0 auto 2rem; color: var(--gray); font-size: 1.125rem;">
+                    AviOptix is designed to be accessible to everyone. Our platform and the built-in <strong>AviOptixGPT AI Expert</strong> natively speak and understand <strong>7 major languages</strong>: Amharic, Arabic, English, Hausa, French, Swahili, and Zulu.
+                </p>
+                <img src="https://ik.imagekit.io/ojfedrprt/avioptix_languages2_imgupscaler.ai_V1(Fast)_4K.png" alt="AviOptix Supported Languages" style="width: 100%; max-width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
             </div>
         </div>
     </section>
@@ -1540,6 +1588,7 @@
 
                     <div class="pricing-section-header">What You Get</div>
                     <ul class="pricing-features">
+                        <li>AI Expert</li>
                         <li>Basic daily tracking</li>
                         <li>Manual data entry</li>
                         <li>Simple dashboard</li>
@@ -1559,7 +1608,7 @@
                         <li class="locked">No IoT sensors</li>
                         <li class="locked">No multiple houses</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary">Get Started</a>
+                    <a href="#" class="btn btn-secondary">Start Free Trial</a>
                 </div>
 
                 <!-- Basic Tier -->
@@ -1583,6 +1632,7 @@
 
                     <div class="pricing-section-header">What You Get</div>
                     <ul class="pricing-features">
+                        <li>AI Expert</li>
                         <li>Everything in Free PLUS:</li>
                         <li>Basic tracking features</li>
                         <li>Mobile app access</li>
@@ -1596,7 +1646,7 @@
                         <li class="locked">NO data export</li>
                         <li class="locked">NO API access</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary">Start Free Trial</a>
+                    <a href="#" class="btn btn-secondary">Start Now</a>
                 </div>
 
                 <!-- Starter Tier -->
@@ -1620,6 +1670,7 @@
 
                     <div class="pricing-section-header">What You Get</div>
                     <ul class="pricing-features">
+                        <li>AI Expert</li>
                         <li>Everything in Basic PLUS:</li>
                         <li>Web app access (desktop)</li>
                         <li>Smart alerts & notifications</li>
@@ -1639,7 +1690,7 @@
                         <li class="locked">NO IoT sensors</li>
                         <li class="locked">NO API access</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Start Free Trial</a>
+                    <a href="#" class="btn btn-primary">Start Now</a>
                 </div>
 
                 <!-- Professional Tier -->
@@ -1663,6 +1714,7 @@
 
                     <div class="pricing-section-header">What You Get</div>
                     <ul class="pricing-features">
+                        <li>AI Expert</li>
                         <li>Everything in Starter PLUS:</li>
                         <li>IoT Integration (LoRa)</li>
                         <li>Automated sensor data</li>
@@ -1674,7 +1726,7 @@
                         <li>Machine learning insights</li>
                         <li>Priority email support</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary">Start Free Trial</a>
+                    <a href="#" class="btn btn-secondary">Start Now</a>
                 </div>
 
                 <!-- Enterprise Tier -->
@@ -1698,6 +1750,7 @@
 
                     <div class="pricing-section-header">What You Get</div>
                     <ul class="pricing-features">
+                        <li>AI Expert</li>
                         <li>Everything in Professional PLUS:</li>
                         <li>Dedicated support (24/7 priority)</li>
                         <li>Direct phone/email support</li>
