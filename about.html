@@ -100,13 +100,16 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--dark);
+            font-weight: 700; /* Changed from 800 */
+            color: var(--primary); /* Consolidate color definition */
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--primary);
+        }
+
+        .logo img {
+            height: 32px; /* Matched index.html logo size */
         }
 
         .logo i {
@@ -253,8 +256,8 @@
 
         .footer-logo {
             font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--dark);
+            font-weight: 700; /* Changed from 800 */
+            color: var(--primary); /* Changed from var(--dark) to orange */
             margin-bottom: 1rem;
             display: block;
             text-decoration: none;
@@ -476,6 +479,57 @@
                 font-size: 1.125rem;
             }
         }
+
+        .content-block {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--glass-shadow);
+            display: flex; /* Added */
+            flex-wrap: wrap; /* Added */
+            align-items: flex-start; /* Align items to the top */
+        }
+
+        .content-block h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            flex-basis: 100%; /* Take full width */
+        }
+
+        .content-block img {
+            width: 45%; /* Adjusted width for side-by-side layout */
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            margin-right: 5%; /* Spacing between image and text */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            /* float: left; removed */
+        }
+
+        .content-block .text-content {
+            width: 50%; /* Remaining width for text */
+        }
+
+        @media (max-width: 768px) {
+            .content-block {
+                flex-direction: column; /* Stack image and text */
+                align-items: center; /* Center items when stacked */
+            }
+
+            .content-block img,
+            .content-block .text-content {
+                width: 100%; /* Full width */
+                margin-right: 0;
+            }
+
+            .content-block img {
+                margin-bottom: 1.5rem; /* Add space below image */
+            }
+        }
     </style>
 </head>
 
@@ -486,10 +540,11 @@
             <nav>
                 <a href="index.html" class="logo">
                     <img src="https://ik.imagekit.io/ojfedrprt/AviOptix-Orange-Logo2.png?updatedAt=1761942486634"
-                        alt="AviOptix Logo" style="height: 40px;">
+                        alt="AviOptix Logo">
                     <span>AviOptix</span>
                 </a>
                 <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="index.html#features" class="nav-link">Features</a></li>
                     <li><a href="index.html#how-it-works" class="nav-link">How it Works</a></li>
                     <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
@@ -544,60 +599,72 @@
         <div class="container">
 
             <!-- Introduction -->
-            <div class="content-block">
+            <div class="content-block" id="intro-block">
                 <h3>Who We Are</h3>
-                <p>Avioptix is a pioneering poultry consultancy firm founded by Adam Lurie, a seasoned expert with over
-                    25 years of hands-on experience in the poultry sector spanning from Africa to Europe. Adam’s
-                    extensive background as a consultant has equipped him with deep insights into diverse poultry
-                    operations, from small-scale farms in sub-Saharan Africa to large integrated enterprises in Western
-                    Europe.</p>
-                <p>Co-founded by Kudzayi Matinyarare, who studied medicine in Russia and transitioned into a full-stack
-                    developer, this partnership combines Adam’s industry expertise with Kudzayi’s technical prowess in
-                    AI and software development, helping us create and scale this innovative business. Drawing on this
-                    combined wealth of knowledge, Avioptix was established to revolutionize the industry by integrating
-                    artificial intelligence (AI) with traditional poultry expertise.</p>
+                <img src="https://ik.imagekit.io/ojfedrprt/download%20(6)_imgupscaler.ai_V1(Fast)_2K.png" alt="Who We Are">
+                <div class="text-content">
+                    <p>Avioptix is a pioneering poultry consultancy firm founded by Adam Lurie, a seasoned expert with over
+                        25 years of hands-on experience in the poultry sector spanning from Africa to Europe. Adam’s
+                        extensive background as a consultant has equipped him with deep insights into diverse poultry
+                        operations, from small-scale farms in sub-Saharan Africa to large integrated enterprises in Western
+                        Europe.</p>
+                    <p>Co-founded by Kudzayi Matinyarare, who studied medicine in Russia and transitioned into a full-stack
+                        developer, this partnership combines Adam’s industry expertise with Kudzayi’s technical prowess in
+                        AI and software development, helping us create and scale this innovative business. Drawing on this
+                        combined wealth of knowledge, Avioptix was established to revolutionize the industry by integrating
+                        artificial intelligence (AI) with traditional poultry expertise.</p>
+                </div>
             </div>
 
             <!-- Our Mission -->
-            <div class="content-block">
+            <div class="content-block" id="mission-block">
                 <h3>Our Mission</h3>
-                <p>Independent AI-enhanced poultry supply chain specialists providing cutting-edge consultancy,
-                    training, and real-time monetization solutions to the global poultry industry.</p>
-                <p>Our unique services deliver comprehensive, independent consultancy and training support tailored to
-                    the integrated poultry production and manufacturing sectors worldwide. Avioptix incorporates
-                    real-time AI data collection and analysis to improve outcomes through customized solutions that
-                    detail primary actions, monitor success via hourly AI-driven metrics, and provide ongoing
-                    training—whether for Greenfield projects or mature businesses.</p>
-                <p>We foster strong, long-term client relationships, adapting solutions as your operations evolve, while
-                    delivering Capital Investment Projects, Business Improvements, and Transformation Programmes
-                    enhanced by predictive AI insights.</p>
+                <img src="https://ik.imagekit.io/ojfedrprt/ao1_imgupscaler.ai_V1(Fast)_2K.png" alt="Our Mission">
+                <div class="text-content">
+                    <p>Independent AI-enhanced poultry supply chain specialists providing cutting-edge consultancy,
+                        training, and real-time monetization solutions to the global poultry industry.</p>
+                    <p>Our unique services deliver comprehensive, independent consultancy and training support tailored to
+                        the integrated poultry production and manufacturing sectors worldwide. Avioptix incorporates
+                        real-time AI data collection and analysis to improve outcomes through customized solutions that
+                        detail primary actions, monitor success via hourly AI-driven metrics, and provide ongoing
+                        training—whether for Greenfield projects or mature businesses.</p>
+                    <p>We foster strong, long-term client relationships, adapting solutions as your operations evolve, while
+                        delivering Capital Investment Projects, Business Improvements, and Transformation Programmes
+                        enhanced by predictive AI insights.</p>
+                </div>
             </div>
 
             <!-- Real-Time Monetization -->
-            <div class="content-block">
+            <div class="content-block" id="monetization-block">
                 <h3>Real-Time Monetization</h3>
-                <p>At the core of Avioptix is our commitment to real-time poultry monetization 24/7. Using advanced AI
-                    systems, we collect data every hour from farm sensors, genetic tracking tools, and performance
-                    monitors. This data aligns directly with genetic performance objectives, such as optimizing broiler
-                    growth rates, egg production efficiency, and breed-specific health metrics (e.g., feed conversion
-                    ratios and mortality rates).</p>
-                <p>By analyzing this continuous stream of information, we enable clients to monetize their operations
-                    more effectively—identifying cost-saving opportunities, predicting market trends, and maximizing
-                    yields in real time.</p>
+                <img src="https://ik.imagekit.io/ojfedrprt/ao2_imgupscaler.ai_V1(Fast)_2K.png" alt="Real-Time Monetization">
+                <div class="text-content">
+                    <p>At the core of Avioptix is our commitment to real-time poultry monetization 24/7. Using advanced AI
+                        systems, we collect data every hour from farm sensors, genetic tracking tools, and performance
+                        monitors. This data aligns directly with genetic performance objectives, such as optimizing broiler
+                        growth rates, egg production efficiency, and breed-specific health metrics (e.g., feed conversion
+                        ratios and mortality rates).</p>
+                    <p>By analyzing this continuous stream of information, we enable clients to monetize their operations
+                        more effectively—identifying cost-saving opportunities, predicting market trends, and maximizing
+                        yields in real time.</p>
+                </div>
             </div>
 
             <!-- For Entrepreneurs -->
-            <div class="content-block">
+            <div class="content-block" id="entrepreneur-block">
                 <h3>For Aspiring Entrepreneurs</h3>
-                <p>For aspiring entrepreneurs entering the poultry industry, Avioptix offers detailed business proposals
-                    complete with 5-year cash flow projections. These projections are built on robust data models,
-                    incorporating variables like initial capital outlay for facilities (e.g., housing, equipment, and
-                    biosecurity systems), ongoing operational costs (feed, labor, veterinary care), revenue streams from
-                    meat or egg sales, and AI-forecasted adjustments for genetic improvements and market fluctuations.
-                </p>
-                <p>Our projections assume conservative growth rates (e.g., 5-10% annual yield increase through
-                    AI-optimized genetics) and factor in risks like disease outbreaks or feed price volatility, ensuring
-                    realistic and actionable plans.</p>
+                <img src="https://ik.imagekit.io/ojfedrprt/download%20(1)_imgupscaler.ai_V1(Fast)_2K.png" alt="For Aspiring Entrepreneurs">
+                <div class="text-content">
+                    <p>For aspiring entrepreneurs entering the poultry industry, Avioptix offers detailed business proposals
+                        complete with 5-year cash flow projections. These projections are built on robust data models,
+                        incorporating variables like initial capital outlay for facilities (e.g., housing, equipment, and
+                        biosecurity systems), ongoing operational costs (feed, labor, veterinary care), revenue streams from
+                        meat or egg sales, and AI-forecasted adjustments for genetic improvements and market fluctuations.
+                    </p>
+                    <p>Our projections assume conservative growth rates (e.g., 5-10% annual yield increase through
+                        AI-optimized genetics) and factor in risks like disease outbreaks or feed price volatility, ensuring
+                        realistic and actionable plans.</p>
+                </div>
             </div>
 
             <!-- Services -->
