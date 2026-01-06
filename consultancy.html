@@ -4,16 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About AviOptix - Advanced AI-Driven Poultry Consultancy</title>
+    <title>AviOptix Consultancy | Contract Farming</title>
     <meta name="description"
-        content="Independent AI-enhanced poultry supply chain specialists providing cutting-edge consultancy, training, and real-time monetization solutions.">
+        content="Unlock your path to profitable poultry farming with Avioptix. Guaranteed sales, AI-powered monitoring, and risk-free contract farming.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="512x512"
+        href="https://ik.imagekit.io/ojfedrprt/logo-512.png?updatedAt=1762953631239">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://ik.imagekit.io/ojfedrprt/logo-192.png?updatedAt=1762953631150">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://ik.imagekit.io/ojfedrprt/logo-180.png?updatedAt=1762953631031">
+    <link rel="icon" type="image/png" sizes="64x64"
+        href="https://ik.imagekit.io/ojfedrprt/logo-64.png?updatedAt=1762953631431">
+    <link rel="icon" type="image/png" sizes="48x48"
+        href="https://ik.imagekit.io/ojfedrprt/logo-48.png?updatedAt=1762953631098">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://ik.imagekit.io/ojfedrprt/logo-32.png?updatedAt=1762953631107">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://ik.imagekit.io/ojfedrprt/logo-16.png?updatedAt=1762953631117">
     <style>
-        /* Reusing styles from index.html for consistency */
         :root {
             --primary: #F59E0B;
             --primary-dark: #D97706;
@@ -100,8 +113,8 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700; /* Changed from 800 */
-            color: var(--primary); /* Consolidate color definition */
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
             display: flex;
             align-items: center;
@@ -109,11 +122,7 @@
         }
 
         .logo img {
-            height: 32px; /* Matched index.html logo size */
-        }
-
-        .logo i {
-            color: var(--primary);
+            height: 32px;
         }
 
         .nav-links {
@@ -162,12 +171,17 @@
             box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.4);
         }
 
-        /* Hero Section for About Page */
+         /* Hero Section */
         .page-hero {
-            padding: 12rem 0 6rem;
+            padding: 10rem 0 6rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://ik.imagekit.io/ojfedrprt/hero-bg3_imgupscaler.ai_Beta_2K.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 0 0 50px 50px;
         }
 
         .page-hero h1 {
@@ -175,20 +189,18 @@
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.2;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .page-hero p {
             font-size: 1.25rem;
-            color: var(--gray);
+            color: rgba(255,255,255,0.9);
             max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Content Sections */
+        /* Section Styling */
         .section {
             padding: 5rem 0;
             position: relative;
@@ -205,35 +217,145 @@
             margin-bottom: 1rem;
         }
 
-        .content-block {
+        /* Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
             background-color: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 24px;
-            padding: 3rem;
-            margin-bottom: 3rem;
+            padding: 2.5rem;
             backdrop-filter: blur(10px);
             box-shadow: var(--glass-shadow);
+            transition: transform 0.3s;
         }
 
-        .content-block h3 {
-            font-size: 1.75rem;
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+
+        /* Intro Text */
+        .intro-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .intro-text h3 {
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
 
-        .content-block p {
+        .intro-text p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background-color: rgba(16, 185, 129, 0.05);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        body.dark-mode .testimonial-card {
+            background: #1f2937;
+        }
+
+        .testimonial-text {
+            font-style: italic;
             margin-bottom: 1.5rem;
             color: var(--gray);
         }
 
-        .content-block ul {
-            list-style-position: inside;
-            margin-bottom: 1.5rem;
-            color: var(--gray);
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
         }
 
-        .content-block li {
+        /* Form */
+        .consult-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
             margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            background: rgba(255,255,255,0.8);
+        }
+        
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea,
+        body.dark-mode .form-group select {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: #4b5563;
+            color: white;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox-group input {
+            width: auto;
         }
 
         /* Footer */
@@ -241,6 +363,7 @@
             background-color: var(--white);
             padding: 4rem 0 2rem;
             border-top: 1px solid var(--card-border);
+            margin-top: 4rem;
         }
 
         body.dark-mode footer {
@@ -256,27 +379,17 @@
 
         .footer-logo {
             font-size: 1.5rem;
-            font-weight: 700; /* Changed from 800 */
-            color: var(--primary); /* Changed from var(--dark) to orange */
+            font-weight: 700;
+            color: var(--primary);
             margin-bottom: 1rem;
             display: block;
             text-decoration: none;
         }
-
-        .footer-links h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark);
-        }
-
+        
         .footer-links ul {
             list-style: none;
         }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
+        
         .footer-links a {
             text-decoration: none;
             color: var(--gray);
@@ -286,73 +399,12 @@
         .footer-links a:hover {
             color: var(--primary);
         }
-
+        
         .copyright {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid var(--card-border);
             color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Orbs */
-        .gradient-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: -1;
-            opacity: 0.4;
-            pointer-events: none;
-            animation: float-orb 10s infinite ease-in-out alternate;
-        }
-
-        .orb-1 {
-            width: 300px;
-            height: 300px;
-            background: var(--orb-1);
-            top: 10%;
-            left: -5%;
-        }
-
-        .orb-2 {
-            width: 400px;
-            height: 400px;
-            background: var(--orb-2);
-            bottom: 20%;
-            right: -10%;
-        }
-
-        .orb-3 {
-            width: 250px;
-            height: 250px;
-            background: var(--orb-3);
-            top: 40%;
-            right: 15%;
-        }
-
-        @keyframes float-orb {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-
-            100% {
-                transform: translate(30px, 50px) scale(1.1);
-            }
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--dark);
-            cursor: pointer;
-            font-size: 1.2rem;
-            padding: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .theme-toggle:hover {
-            color: var(--primary);
         }
 
         /* Mobile Menu */
@@ -391,51 +443,12 @@
         .mobile-menu.active {
             right: 0;
         }
-
+        
         .mobile-menu-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
-        }
-
-        .mobile-menu-close {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--dark);
-            cursor: pointer;
-        }
-
-        body.dark-mode .mobile-menu-close {
-            color: #e2e8f0;
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-        }
-
-        .mobile-nav-links li {
-            margin-bottom: 1.5rem;
-        }
-
-        .mobile-nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            font-size: 1.125rem;
-        }
-
-        body.dark-mode .mobile-nav-links a {
-            color: #e2e8f0;
-        }
-
-        .mobile-nav-actions {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: flex-start;
         }
 
         .overlay {
@@ -455,79 +468,35 @@
             opacity: 1;
             visibility: visible;
         }
+        
+        .mobile-nav-links {
+            list-style: none;
+        }
+        
+        .mobile-nav-links li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.125rem;
+        }
+        
+        body.dark-mode .mobile-nav-links a {
+             color: #e2e8f0;
+        }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-
-
-
-            header .btn-primary {
-                display: none;
-            }
-
             .mobile-menu-btn {
                 display: block;
             }
-
-            .page-hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .page-hero p {
-                font-size: 1.125rem;
-            }
-        }
-
-        .content-block {
-            background-color: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--glass-shadow);
-            display: flex; /* Added */
-            flex-wrap: wrap; /* Added */
-            align-items: flex-start; /* Align items to the top */
-        }
-
-        .content-block h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            flex-basis: 100%; /* Take full width */
-        }
-
-        .content-block img {
-            width: 45%; /* Adjusted width for side-by-side layout */
-            height: auto;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            margin-right: 5%; /* Spacing between image and text */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            /* float: left; removed */
-        }
-
-        .content-block .text-content {
-            width: 50%; /* Remaining width for text */
-        }
-
-        @media (max-width: 768px) {
-            .content-block {
-                flex-direction: column; /* Stack image and text */
-                align-items: center; /* Center items when stacked */
-            }
-
-            .content-block img,
-            .content-block .text-content {
-                width: 100%; /* Full width */
-                margin-right: 0;
-            }
-
-            .content-block img {
-                margin-bottom: 1.5rem; /* Add space below image */
+            header .btn-primary {
+                display: none;
             }
         }
     </style>
@@ -546,23 +515,22 @@
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="index.html#features" class="nav-link">Features</a></li>
-                    <li><a href="index.html#how-it-works" class="nav-link">How it Works</a></li>
                     <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
-                    <li><a href="consultancy.html" class="nav-link">Consultancy</a></li>
+                    <li><a href="consultancy.html" class="nav-link" style="color: var(--primary);">Consultancy</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                 </ul>
                 <div style="display: flex; gap: 1rem; align-items: center;">
                     <button id="themeToggle" class="theme-toggle">
                         <i class="fa-solid fa-moon"></i>
                     </button>
-                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <a href="#book-consultation" class="btn btn-primary">Book Consultation</a>
                 </div>
                 <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
             </nav>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
+     <!-- Mobile Menu -->
     <div class="overlay" id="overlay"></div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
@@ -574,131 +542,139 @@
             <button class="mobile-menu-close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
         </div>
         <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
             <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#how-it-works">How It Works</a></li>
             <li><a href="index.html#pricing">Pricing</a></li>
-            <li><a href="consultancy.html">Consultancy</a></li>
+            <li><a href="consultancy.html" style="color: var(--primary);">Consultancy</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
         <div class="mobile-nav-actions">
-            <a href="#" class="btn btn-primary">Get Started</a>
+            <a href="#book-consultation" class="btn btn-primary">Book Consultation</a>
             <button class="theme-toggle" id="mobileThemeToggle"><i class="fas fa-moon"></i> Toggle Theme</button>
         </div>
     </div>
 
-    <!-- Page Hero -->
+    <!-- Hero Section -->
     <section class="page-hero">
-        <div class="gradient-orb orb-1"></div>
         <div class="container">
-            <h1>About AviOptix</h1>
-            <p>Advanced AI-Driven Poultry Consultancy and Optimization Experts</p>
+            <h1>Dreaming of a Thriving Poultry Business Without the Headaches?</h1>
+            <p>Unlock Your Path to Profitable Poultry Farming with Avioptix – No Risks, All Rewards!</p>
         </div>
     </section>
 
-    <!-- Main Content -->
+    <!-- Intro Section -->
     <section class="section">
-        <div class="gradient-orb orb-3"></div>
         <div class="container">
-
-            <!-- Introduction -->
-            <div class="content-block" id="intro-block">
-                <h3>Who We Are</h3>
-                <img src="https://ik.imagekit.io/ojfedrprt/download%20(6)_imgupscaler.ai_V1(Fast)_2K.png" alt="Who We Are">
-                <div class="text-content">
-                    <p>Avioptix is a pioneering poultry consultancy firm founded by Adam Lurie, a seasoned expert with over
-                        25 years of hands-on experience in the poultry sector spanning from Africa to Europe. Adam’s
-                        extensive background as a consultant has equipped him with deep insights into diverse poultry
-                        operations, from small-scale farms in sub-Saharan Africa to large integrated enterprises in Western
-                        Europe.</p>
-                    <p>Co-founded by Kudzayi Matinyarare, who studied medicine in Russia and transitioned into a full-stack
-                        developer, this partnership combines Adam’s industry expertise with Kudzayi’s technical prowess in
-                        AI and software development, helping us create and scale this innovative business. Drawing on this
-                        combined wealth of knowledge, Avioptix was established to revolutionize the industry by integrating
-                        artificial intelligence (AI) with traditional poultry expertise.</p>
-                </div>
+            <div class="intro-text">
+                <h3>Imagine earning steady income...</h3>
+                <p>...from raising chickens, with guaranteed buyers, cutting-edge tech watching over your flock 24/7, and zero worries about market crashes or production pitfalls. That’s the Avioptix difference – we’re revolutionizing poultry farming for aspiring entrepreneurs like you!</p>
             </div>
-
-            <!-- Our Mission -->
-            <div class="content-block" id="mission-block">
-                <h3>Our Mission</h3>
-                <img src="https://ik.imagekit.io/ojfedrprt/ao1_imgupscaler.ai_V1(Fast)_2K.png" alt="Our Mission">
-                <div class="text-content">
-                    <p>Independent AI-enhanced poultry supply chain specialists providing cutting-edge consultancy,
-                        training, and real-time monetization solutions to the global poultry industry.</p>
-                    <p>Our unique services deliver comprehensive, independent consultancy and training support tailored to
-                        the integrated poultry production and manufacturing sectors worldwide. Avioptix incorporates
-                        real-time AI data collection and analysis to improve outcomes through customized solutions that
-                        detail primary actions, monitor success via hourly AI-driven metrics, and provide ongoing
-                        training—whether for Greenfield projects or mature businesses.</p>
-                    <p>We foster strong, long-term client relationships, adapting solutions as your operations evolve, while
-                        delivering Capital Investment Projects, Business Improvements, and Transformation Programmes
-                        enhanced by predictive AI insights.</p>
-                </div>
-            </div>
-
-            <!-- Real-Time Monetization -->
-            <div class="content-block" id="monetization-block">
-                <h3>Real-Time Monetization</h3>
-                <img src="https://ik.imagekit.io/ojfedrprt/ao2_imgupscaler.ai_V1(Fast)_2K.png" alt="Real-Time Monetization">
-                <div class="text-content">
-                    <p>At the core of Avioptix is our commitment to real-time poultry monetization 24/7. Using advanced AI
-                        systems, we collect data every hour from farm sensors, genetic tracking tools, and performance
-                        monitors. This data aligns directly with genetic performance objectives, such as optimizing broiler
-                        growth rates, egg production efficiency, and breed-specific health metrics (e.g., feed conversion
-                        ratios and mortality rates).</p>
-                    <p>By analyzing this continuous stream of information, we enable clients to monetize their operations
-                        more effectively—identifying cost-saving opportunities, predicting market trends, and maximizing
-                        yields in real time.</p>
-                </div>
-            </div>
-
-            <!-- For Entrepreneurs -->
-            <div class="content-block" id="entrepreneur-block">
-                <h3>For Aspiring Entrepreneurs</h3>
-                <img src="https://ik.imagekit.io/ojfedrprt/download%20(1)_imgupscaler.ai_V1(Fast)_2K.png" alt="For Aspiring Entrepreneurs">
-                <div class="text-content">
-                    <p>For aspiring entrepreneurs entering the poultry industry, Avioptix offers detailed business proposals
-                        complete with 5-year cash flow projections. These projections are built on robust data models,
-                        incorporating variables like initial capital outlay for facilities (e.g., housing, equipment, and
-                        biosecurity systems), ongoing operational costs (feed, labor, veterinary care), revenue streams from
-                        meat or egg sales, and AI-forecasted adjustments for genetic improvements and market fluctuations.
-                    </p>
-                    <p>Our projections assume conservative growth rates (e.g., 5-10% annual yield increase through
-                        AI-optimized genetics) and factor in risks like disease outbreaks or feed price volatility, ensuring
-                        realistic and actionable plans.</p>
-                </div>
-            </div>
-
-            <!-- Services -->
-            <div class="content-block">
-                <h3>Our Services</h3>
-                <p>Avioptix provides expert production, management, and business development services, augmented by AI
-                    technologies for unparalleled precision and efficiency.</p>
-
-                <h4>Consultancy</h4>
-                <p>Leveraging a global network of highly experienced poultry industry specialists, we offer consultancy
-                    grounded in technical, people management, and operational expertise. What sets Avioptix apart is our
-                    AI integration:</p>
-                <ul>
-                    <li><strong>Real-Time Data Collection and Monetization:</strong> Our proprietary AI platform
-                        collects data 24/7, every hour, from IoT devices monitoring environmental conditions
-                        (temperature, humidity, ventilation), animal behavior, and genetic performance indicators. This
-                        aligns with objectives such as achieving optimal FCR (Feed Conversion Ratio) of 1.5-1.7 for
-                        broilers or hen-day egg production rates exceeding 90%, based on breeds like Ross or Cobb.
-                        Clients receive instant insights to monetize operations, such as adjusting feed formulations to
-                        reduce costs by up to 15% or predicting flock performance to secure premium pricing.</li>
-                    <li><strong>Genetic Performance Optimization:</strong> We consult on breed selection and genetic
-                        enhancements, using AI to simulate outcomes and align with industry standards. For instance, we
-                        help integrate data from genetic suppliers to forecast improvements in traits like disease
-                        resistance or growth speed, ensuring compliance with global benchmarks.</li>
-                </ul>
-                <p>Avioptix, under Adam Lurie’s leadership and with Kudzayi Matinyarare’s technical foundation, bridges
-                    traditional poultry consultancy with futuristic AI, empowering businesses to thrive in a competitive
-                    industry. Contact us to transform your poultry operations today.</p>
-            </div>
-
         </div>
-        <div class="gradient-orb orb-2"></div>
+    </section>
+
+    <!-- Why Choose Avioptix -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Avioptix Contract Farming?</h2>
+                <p>Secure Your Success from Day One</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Start Small, Scale Big</h3>
+                    <p>Start with as few as 1,000 birds per farm. We provide the chicks, feed, and expert guidance – you focus on what you do best.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3>Guaranteed Sales</h3>
+                    <p>Say goodbye to unsold stock and price volatility. Our contracts ensure every healthy bird is bought at fair, predictable rates in just 35 days.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI-Powered Monitoring</h3>
+                    <p>Advanced AI tracks your birds 24/7. From health alerts to environmental optimizations, get instant insights via our app – preventing issues before they arise.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Minimize Risks</h3>
+                    <p>We handle market risks, supply chain, and technical support. Farmers report up to 25-75% income boosts through efficient, low-risk operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits/Target Audience -->
+    <section class="section" style="background: rgba(245, 158, 11, 0.05);">
+        <div class="container">
+             <div class="section-title">
+                <h2>Perfect for Everyone</h2>
+                <p>Whether you're in the diaspora or right here at home</p>
+            </div>
+            <div class="intro-text">
+                <p>Whether you’re stateside or abroad, our model lets you build wealth passively. No need for massive upfront capital on feed or sales – we secure everything. Real farmers are earning significant returns with minimal hands-on time, thanks to our performance incentives and tech edge.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="testimonials">
+                <div class="section-title">
+                    <h2>Success Stories</h2>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">“Avioptix turned my backyard dream into a reality – AI monitoring is a game-changer!”</p>
+                        <p class="testimonial-author">– John D., Diaspora Investor</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">“Guaranteed sales meant no more sleepless nights. Profits rolled in from flock one!”</p>
+                        <p class="testimonial-author">– Sarah K., New Farmer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA & Form -->
+    <section class="section" id="book-consultation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to turn your poultry dreams into reality?</h2>
+                <p>Spots fill fast – minimum 1,000 birds to start.</p>
+            </div>
+            
+            <div class="consult-form">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">Book Your Consultation Today</h3>
+                <form id="consultationForm" action="https://formspree.io/f/xojvobbr" method="POST">
+                    <input type="hidden" name="_subject" value="New Consultancy Request from AviOptix Website">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 8900">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message / Questions</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your farm or investment goals..."></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required>
+                        <label for="consent" style="font-weight: 400; font-size: 0.9rem; margin: 0;">I agree to receive communications from AviOptix.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book Consultation</button>
+                    <p id="form-status" style="margin-top: 1rem; text-align: center; display: none;"></p>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -706,7 +682,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="footer-logo">
+                    <a href="index.html" class="footer-logo">
                         <img src="https://ik.imagekit.io/ojfedrprt/AviOptix-Orange-Logo2.png?updatedAt=1761942486634"
                             alt="AviOptix Logo" style="height: 40px;"> AviOptix
                     </a>
@@ -719,7 +695,6 @@
                         <li><a href="index.html#features">Features</a></li>
                         <li><a href="index.html#pricing">Pricing</a></li>
                         <li><a href="consultancy.html">Consultancy</a></li>
-                        <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -739,7 +714,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 AviOptix. All rights reserved.</p>
+                <p>&copy; 2025 AviOptix. All rights reserved. | AI-Optimized Farms | Guaranteed Contracts</p>
             </div>
         </div>
     </footer>
@@ -823,6 +798,55 @@
         if (mobileThemeToggle) {
             mobileThemeToggle.addEventListener('click', toggleTheme);
         }
+
+        // Formspree AJAX Handling
+        const form = document.getElementById("consultationForm");
+        
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const status = document.getElementById("form-status");
+            const data = new FormData(event.target);
+            
+            // Check if the placeholder ID is still there
+            if (event.target.action.includes("YOUR_FORMSPREE_ID")) {
+                status.style.display = 'block';
+                status.style.color = 'red';
+                status.innerHTML = "Setup Error: Please update the form action with your actual Formspree ID.";
+                return;
+            }
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.style.display = 'block';
+                    status.style.color = 'var(--secondary)'; // Green
+                    status.innerHTML = "Thanks for your submission! We'll be in touch soon.";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.style.display = 'block';
+                            status.style.color = 'red';
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.style.display = 'block';
+                            status.style.color = 'red';
+                            status.innerHTML = "Oops! There was a problem submitting your form";
+                        }
+                    })
+                }
+            }).catch(error => {
+                status.style.display = 'block';
+                status.style.color = 'red';
+                status.innerHTML = "Oops! There was a problem submitting your form";
+            });
+        }
+        form.addEventListener("submit", handleSubmit);
     </script>
 </body>
 
