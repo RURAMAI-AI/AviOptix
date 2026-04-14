@@ -536,6 +536,104 @@
             color: #94a3b8;
         }
 
+        /* Consultancy Section */
+        .consultancy-section {
+            background-color: rgba(59, 130, 246, 0.02);
+        }
+
+        body.dark-mode .consultancy-section {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+
+        .consultancy-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .consultancy-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .consultancy-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .consultancy-image img:hover {
+            transform: scale(1.02);
+        }
+
+        body.dark-mode .consultancy-image img {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .consultancy-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .consultancy-text p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        body.dark-mode .consultancy-text p {
+            color: #94a3b8;
+        }
+
+        .consultancy-text ul {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .consultancy-text ul li {
+            color: var(--gray);
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .consultancy-text ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+        }
+
+        body.dark-mode .consultancy-text ul li {
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            .consultancy-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .consultancy-image {
+                order: 1;
+            }
+
+            .consultancy-text {
+                order: 2;
+            }
+        }
+
         /* How It Works */
         .how-it-works {
             background-color: rgba(245, 158, 11, 0.03);
@@ -1425,7 +1523,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Smart Poultry Management for Farmers</h1>
+                    <h1>Poultry Management & Consultancy for Farmers</h1>
                     <p>Track, analyze, and optimize your poultry farm with real-time data and AI-powered insights</p>
                     <div class="hero-buttons">
                         <a href="https://app.avioptix.com/" class="btn btn-primary" id="heroGetStartedBtn">Get Started</a>
@@ -1435,6 +1533,37 @@
                     <img src="https://ik.imagekit.io/ojfedrprt/hero-bg3_imgupscaler.ai_Beta_2K.jpg" alt="Hero Image" class="hero-img">
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultancy Section -->
+    <section class="section consultancy-section" id="consultancy">
+        <div class="gradient-orb orb-2" style="left: -5%; top: 30%;"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>The Experts Behind the Technology</h2>
+                <p>Decades of poultry industry experience powering innovative solutions</p>
+            </div>
+            <div class="consultancy-content">
+                <div class="consultancy-image">
+                    <img src="https://ik.imagekit.io/ojfedrprt/IMG_20260414_224501_477.jpg" alt="Avioptix Consultancy Team">
+                    <a href="mailto:adamlurie@avioptix.com?subject=Consultation%20Request%20from%20AviOptix" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-block;">Book Consultation</a>
+                </div>
+                <div class="consultancy-text">
+                    <p>Avioptix is a poultry production and international consultancy company, established to fill the management expertise gap in the poultry industry across the African continent. It is a practice of highly experienced poultry professionals with expertise in various aspects of the poultry production value chain, namely:</p>
+                    <ul>
+                        <li>Hatcheries planning, construction, and management</li>
+                        <li>Broiler and Layer Breeder planning and production</li>
+                        <li>Commercial Broiler production for meat</li>
+                        <li>Commercial Layer production for table eggs</li>
+                        <li>Veterinary and Technical Services (skills transfer programmes)</li>
+                        <li>Stock-feeds Plant planning, construction, management, raw material procurement, and quality assurance</li>
+                        <li>Poultry abattoir planning, construction, management, and cold chain management</li>
+                        <li>Primary agriculture in grain and crop production</li>
+                    </ul>
+                    <p>The company specialises in poultry production in all its aspects including stock-feed manufacturing, quality assurance and training, broiler, layer breeding and commercial production.</p>
+                </div>
             </div>
         </div>
     </section>
