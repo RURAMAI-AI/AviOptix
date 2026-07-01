@@ -288,122 +288,19 @@
             /* Keep orbs inside */
         }
 
-        /* Hero Section */
+/* Hero Section */
         .hero {
             padding: 10rem 0 5rem;
         }
 
-.hero-img {
-             width: 100%;
-             max-width: 960px; /* Increased size by 20% from 800px */
-             border-radius: 12px;
-             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-             height: auto;
-             display: block;
-         }
-
-         .carousel-container {
-             position: relative;
-             width: 100%;
-             max-width: 960px;
-             border-radius: 12px;
-             overflow: hidden;
-             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-         }
-
-         body.dark-mode .carousel-container {
-             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-         }
-
-         .carousel {
-             position: relative;
-             width: 100%;
-         }
-
-         .carousel-slide {
-             display: none;
-             width: 100%;
-         }
-
-         .carousel-slide.active {
-             display: block;
-         }
-
-         .carousel-slide img {
-             width: 100%;
-             height: auto;
-             display: block;
-         }
-
-         .carousel-btn {
-             position: absolute;
-             top: 50%;
-             transform: translateY(-50%);
-             background: rgba(255, 255, 255, 0.8);
-             border: none;
-             width: 40px;
-             height: 40px;
-             border-radius: 50%;
-             cursor: pointer;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             transition: var(--transition);
-             z-index: 10;
-         }
-
-         body.dark-mode .carousel-btn {
-             background: rgba(30, 41, 59, 0.8);
-             color: #e2e8f0;
-         }
-
-         .carousel-btn:hover {
-             background: var(--primary);
-             color: white;
-         }
-
-         .carousel-btn.prev {
-             left: 10px;
-         }
-
-         .carousel-btn.next {
-             right: 10px;
-         }
-
-         .carousel-indicators {
-             position: absolute;
-             bottom: 15px;
-             left: 50%;
-             transform: translateX(-50%);
-             display: flex;
-             gap: 8px;
-             z-index: 10;
-         }
-
-         .indicator {
-             width: 10px;
-             height: 10px;
-             border-radius: 50%;
-             background: rgba(255, 255, 255, 0.5);
-             cursor: pointer;
-             transition: var(--transition);
-         }
-
-         body.dark-mode .indicator {
-             background: rgba(255, 255, 255, 0.3);
-         }
-
-         .indicator.active,
-         .indicator:hover {
-             background: var(--primary);
-         }
-
-         @media (max-width: 768px) {
-             .carousel-btn {
-                 width: 35px;
-                 height: 35px;
-             }
-         }
+        .hero-img {
+            width: 100%;
+            max-width: 960px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            height: auto;
+            display: block;
+        }
 
         .hero-content {
             display: grid;
@@ -1633,26 +1530,7 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="carousel-container">
-                        <div class="carousel" id="heroCarousel">
-                            <div class="carousel-slide active">
-                                <img src="https://ik.imagekit.io/ojfedrprt/download%20(6)_imgupscaler.ai_V1(Fast)_2K.png?updatedAt=1765470280999" alt="AviOptix Dashboard" class="hero-img">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="https://ik.imagekit.io/ojfedrprt/download%20(1)_imgupscaler.ai_V1(Fast)_2K.png?updatedAt=1765470280696" alt="Poultry Analytics" class="hero-img">
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="https://ik.imagekit.io/ojfedrprt/ao2_imgupscaler.ai_V1(Fast)_2K.png?updatedAt=1765470280168" alt="Farm Management" class="hero-img">
-                            </div>
-                        </div>
-                        <button class="carousel-btn prev" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
-                        <button class="carousel-btn next" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
-                        <div class="carousel-indicators">
-                            <span class="indicator active" data-slide="0"></span>
-                            <span class="indicator" data-slide="1"></span>
-                            <span class="indicator" data-slide="2"></span>
-                        </div>
-                    </div>
+                    <img src="https://ik.imagekit.io/ojfedrprt/download%20(6)_imgupscaler.ai_V1(Fast)_2K.png?updatedAt=1765470280999" alt="Hero Image" class="hero-img">
                 </div>
 
             </div>
@@ -2335,63 +2213,6 @@
             alert('Thank you for your message! We will get back to you shortly.');
             consultationForm.reset();
         });
-
-        // Hero Carousel
-        const carousel = document.getElementById('heroCarousel');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.indicator');
-        const prevBtn = document.getElementById('carouselPrev');
-        const nextBtn = document.getElementById('carouselNext');
-        let currentSlide = 0;
-        let slideInterval;
-
-        function showSlide(index) {
-            slides[currentSlide].classList.remove('active');
-            indicators[currentSlide].classList.remove('active');
-            currentSlide = index;
-            slides[currentSlide].classList.add('active');
-            indicators[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            const next = (currentSlide + 1) % slides.length;
-            showSlide(next);
-        }
-
-        function prevSlide() {
-            const prev = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(prev);
-        }
-
-        function startSlideShow() {
-            slideInterval = setInterval(nextSlide, 4000);
-        }
-
-        function stopSlideShow() {
-            clearInterval(slideInterval);
-        }
-
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            stopSlideShow();
-            startSlideShow();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            stopSlideShow();
-            startSlideShow();
-        });
-
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                showSlide(index);
-                stopSlideShow();
-                startSlideShow();
-            });
-        });
-
-        startSlideShow();
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
